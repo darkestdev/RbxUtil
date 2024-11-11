@@ -439,14 +439,14 @@ function Component:_setup()
 		local id = self[KEY_LOCK_CONSTRUCT][instance] or 0
 		id += 1
 		self[KEY_LOCK_CONSTRUCT][instance] = id
-		task.defer(function()
+		task.spawn(function()
 			local component = SafeConstruct(instance, id)
 			if not component then
 				return
 			end
 			self[KEY_INST_TO_COMPONENTS][instance] = component
 			table.insert(self[KEY_COMPONENTS], component)
-			task.defer(function()
+			task.spawn(function()
 				if self[KEY_INST_TO_COMPONENTS][instance] == component then
 					StartComponent(component)
 				end

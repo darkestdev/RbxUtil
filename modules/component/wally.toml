@@ -1,9 +1,8 @@
 [package]
-name = "sleitnick/component"
+name = "darkestdev/component"
 description = "Component class"
-version = "2.4.8"
+version = "1.0.0"
 license = "MIT"
-authors = ["Stephen Leitnick"]
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
